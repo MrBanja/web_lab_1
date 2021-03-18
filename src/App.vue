@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <ul class="pagination">
+      <li class="page-item" :class="{' active': formNum === 1}"><a class="page-link" href="#" @click="changeFormNum(1)">1</a></li>
+      <li class="page-item" :class="{' active': formNum === 2}"><a class="page-link" href="#" @click="changeFormNum(2)">2</a></li>
+      <li class="page-item" :class="{' active': formNum === 3}"><a class="page-link" href="#" @click="changeFormNum(3)">3</a></li>
+    </ul>
     <template v-if="formNum === 1"><FirstForm/></template>
     <template v-if="formNum === 2"><SecondForm/></template>
     <template v-if="formNum === 3"><ThirdForm/></template>
@@ -24,6 +29,11 @@ export default {
       this.formNum++;
       if (this.formNum > 3)
         this.formNum = 1;
+    },
+    changeFormNum(num){
+      if (num > 0 && num < 4){
+        this.formNum = num;
+      }
     }
   },
   components: {
@@ -36,4 +46,5 @@ export default {
 
 <style>
 @import 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css';
+
 </style>
