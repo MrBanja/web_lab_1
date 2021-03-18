@@ -1,14 +1,26 @@
 <template>
   <div id="app">
-    <ul class="pagination">
-      <li class="page-item" :class="{' active': formNum === 1}"><a class="page-link" href="#" @click="changeFormNum(1)">1</a></li>
-      <li class="page-item" :class="{' active': formNum === 2}"><a class="page-link" href="#" @click="changeFormNum(2)">2</a></li>
-      <li class="page-item" :class="{' active': formNum === 3}"><a class="page-link" href="#" @click="changeFormNum(3)">3</a></li>
-    </ul>
-    <template v-if="formNum === 1"><FirstForm/></template>
-    <template v-if="formNum === 2"><SecondForm/></template>
-    <template v-if="formNum === 3"><ThirdForm/></template>
-    <button type="submit" class="btn btn-primary" @click="nextForm()">Submit</button>
+    <div class="log-in">
+      <div class="container-fluid mt-4">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col justify-content-center">
+            <div class="container border p-4">
+              <ul class="pagination justify-content-center">
+                <li class="page-item" :class="{' active': formNum === 1}"><a class="page-link" href="#" @click="changeFormNum(1)">1</a></li>
+                <li class="page-item" :class="{' active': formNum === 2}"><a class="page-link" href="#" @click="changeFormNum(2)">2</a></li>
+                <li class="page-item" :class="{' active': formNum === 3}"><a class="page-link" href="#" @click="changeFormNum(3)">3</a></li>
+              </ul>
+              <template v-if="formNum === 1"><FirstForm/></template>
+              <template v-if="formNum === 2"><SecondForm/></template>
+              <template v-if="formNum === 3"><ThirdForm/></template>
+              <button type="submit" class="btn btn-primary" @click="nextForm()">Submit</button>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
